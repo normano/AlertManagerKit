@@ -1,7 +1,7 @@
 import XCTest
 
-import AlertKitTests
+import AlertManagerKitTests
 
 var tests = [XCTestCaseEntry]()
-tests += AlertKitTests.allTests()
+tests += AlertManagerKitTests.allTests()
 XCTMain(tests)

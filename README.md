@@ -1,19 +1,19 @@
-# 🚨 AlertKit
+# 🚨 AlertManagerKit
 
 ![swift v5.3](https://img.shields.io/badge/swift-v5.3-orange.svg)
 ![platform iOS](https://img.shields.io/badge/platform-iOS-blue.svg)
 ![deployment target iOS 14](https://img.shields.io/badge/deployment%20target-iOS%2014-blueviolet)
 
-**AlertKit** is a lightweight library which makes `SwiftUI` alert and action sheet presentation super easy to use.
+**AlertManagerKit** is a lightweight library which makes `SwiftUI` alert and action sheet presentation super easy to use.
 
 ## 💻 Installation
 ### 📦 Swift Package Manager
 Using <a href="https://swift.org/package-manager/" rel="nofollow">Swift Package Manager</a>, add it as a Swift Package in Xcode 11.0 or later, `select File > Swift Packages > Add Package Dependency...` and add the repository URL:
 ```shell
-https://github.com/rebeloper/AlertKit.git
+https://github.com/normano/AlertManagerKit.git
 ```
 ### ✊ Manual Installation
-Download and include the `AlertKit` folder and files in your codebase.
+Download and include the `AlertManagerKit` folder and files in your codebase.
 
 ### 📲 Requirements
 - iOS 14+
@@ -21,15 +21,15 @@ Download and include the `AlertKit` folder and files in your codebase.
 
 ## 👉 Import
 
-Import `AlertKit` into your `View`
+Import `AlertManagerKit` into your `View`
 
 ``` swift
-import AlertKit
+import AlertManagerKit
 ```
 
 ## 🧳 Features
 
-Here's the list of the awesome features `AlertKit` has:
+Here's the list of the awesome features `AlertManagerKit` has:
 - [X] programatic way to show `Alert`s in SwiftUI
 - [X] you don't have to add `Alert`s as view modifiers any more
 - [X] supports `Action Sheet`s
@@ -60,22 +60,22 @@ struct ContentView: View {
 
 This will get ugly really quickly if you're trying to add multiple `Alert`s on a view. Lots of `@State`s with `Alert`s scattered all around your view 🤭
 
-With `AlertKit` you can invoke an `Alert` as simple as calling: 
+With `AlertManagerKit` you can invoke an `Alert` as simple as calling: 
 
 ``` swift
-alertManager.show(dismiss: .success(message: "AlertKit is awesome"))
+alertManager.show(dismiss: .success(message: "AlertManagerKit is awesome"))
 ```
 
 ## ⚙️ How to use
 
-Using `AlertKit` is super simple:
+Using `AlertManagerKit` is super simple:
 
 1. create a `@StateObject` variable of `AlertManager()`
 2. add the `.uses(_:)` view-modifier
 3. show an alert 🤩
 
 ``` swift
-import AlertKit
+import AlertManagerKit
 
 struct ContentView: View {
     
@@ -86,7 +86,7 @@ struct ContentView: View {
         VStack {
             Button("Show Dismiss Alert") {
                 // 3.
-                alertManager.show(dismiss: .success(message: "AlertKit is awesome"))
+                alertManager.show(dismiss: .success(message: "AlertManagerKit is awesome"))
             }
         }
         .uses(alertManager) // 2.
@@ -102,22 +102,22 @@ There are two types of alerts in `SwiftUI`. The `Dismiss Alert` is one of them. 
  - [X] **one** button (dismiss)
  
  ``` swift
- alertManager.show(dismiss: .success(message: "AlertKit is awesome"))
+ alertManager.show(dismiss: .success(message: "AlertManagerKit is awesome"))
  ```
  
- `AlertKit` comes with some predifined helpers to make your life easier. In all of the above the only variable is the `meassage`. `Title` and `button(s)` are predifined if that is the case. Of course you may override any or all of them if you wish. 
+ `AlertManagerKit` comes with some predifined helpers to make your life easier. In all of the above the only variable is the `meassage`. `Title` and `button(s)` are predifined if that is the case. Of course you may override any or all of them if you wish. 
  **Important:** Make sure that you use the `dismiss` ones with the `dismiss` alert and the `primarySeconday` with the `primarySecoondary` alert.
 
 ``` swift
-alertManager.show(dismiss: .custom(title: "AlertKit", message: "AlertKit is awesome", dismissButton: .cancel()))
+alertManager.show(dismiss: .custom(title: "AlertManagerKit", message: "AlertManagerKit is awesome", dismissButton: .cancel()))
 
-alertManager.show(dismiss: .success(message: "AlertKit is awesome"))
+alertManager.show(dismiss: .success(message: "AlertManagerKit is awesome"))
 
-alertManager.show(dismiss: .error(message: "AlertKit is awesome"))
+alertManager.show(dismiss: .error(message: "AlertManagerKit is awesome"))
 
-alertManager.show(dismiss: .warning(message: "AlertKit is awesome"))
+alertManager.show(dismiss: .warning(message: "AlertManagerKit is awesome"))
 
-alertManager.show(dismiss: .info(message: "AlertKit is awesome"))
+alertManager.show(dismiss: .info(message: "AlertManagerKit is awesome"))
 ```
 
 ### 2️⃣ PrimarySecondary Alert
@@ -130,15 +130,15 @@ The second type of alert displayes two buttons (instead of one):
 Here are the ways you may call it:
 
 ``` swift
-alertManager.show(primarySecondary: .custom(title: "AlertKit", message: "AlertKit is awesome", primaryButton: Alert.Button.destructive(Text("OK")), secondaryButton: Alert.Button.cancel()))
+alertManager.show(primarySecondary: .custom(title: "AlertManagerKit", message: "AlertManagerKit is awesome", primaryButton: Alert.Button.destructive(Text("OK")), secondaryButton: Alert.Button.cancel()))
 
-alertManager.show(primarySecondary: .success(title: "AlertKit", message: "AlertKit is awesome", primaryButton: Alert.Button.destructive(Text("OK")), secondaryButton: Alert.Button.cancel()))
+alertManager.show(primarySecondary: .success(title: "AlertManagerKit", message: "AlertManagerKit is awesome", primaryButton: Alert.Button.destructive(Text("OK")), secondaryButton: Alert.Button.cancel()))
 
-alertManager.show(primarySecondary: .error(title: "AlertKit", message: "AlertKit is awesome", primaryButton: Alert.Button.destructive(Text("OK")), secondaryButton: Alert.Button.cancel()))
+alertManager.show(primarySecondary: .error(title: "AlertManagerKit", message: "AlertManagerKit is awesome", primaryButton: Alert.Button.destructive(Text("OK")), secondaryButton: Alert.Button.cancel()))
 
-alertManager.show(primarySecondary: .warning(title: "AlertKit", message: "AlertKit is awesome", primaryButton: Alert.Button.destructive(Text("OK")), secondaryButton: Alert.Button.cancel()))
+alertManager.show(primarySecondary: .warning(title: "AlertManagerKit", message: "AlertManagerKit is awesome", primaryButton: Alert.Button.destructive(Text("OK")), secondaryButton: Alert.Button.cancel()))
 
-alertManager.show(primarySecondary: .info(title: "AlertKit", message: "AlertKit is awesome", primaryButton: Alert.Button.destructive(Text("OK")), secondaryButton: Alert.Button.cancel()))
+alertManager.show(primarySecondary: .info(title: "AlertManagerKit", message: "AlertManagerKit is awesome", primaryButton: Alert.Button.destructive(Text("OK")), secondaryButton: Alert.Button.cancel()))
 ```
 
 ### ⬆️ Action Sheet
@@ -199,7 +199,7 @@ And in my `ContentView` I'm using it like so:
 //  
 
 import SwiftUI
-import AlertKit
+import AlertManagerKit
 
 struct ContentView: View {
     
@@ -328,7 +328,7 @@ VStack {
 ## 🪁 Demo project
 
 For a comprehensive Demo project check out: 
-<a href="https://github.com/rebeloper/AlertKitDemo">AlertKitDemo</a>
+<a href="https://github.com/rebeloper/AlertManagerKitDemo">AlertManagerKitDemo</a>
 
 ## ✍️ Contact
 
